@@ -1,0 +1,247 @@
+{% extends "layout.html" %}
+{% block cover %}
+    <style>
+
+      h1 {
+        color: #f8f9fa;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      /* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+.text-lef {
+  background: url(static/cover_pics/Accueil.jpg) no-repeat top left;
+  background-size: contain;
+}
+    </style>
+
+
+<main role="main">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" >
+          <img src="static/cover_pics/Accueil.jpg" alt="future cockpit" width="1200" height="500"></svg>
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1>Cockpit of future</h1>
+            <p>The automotive industry is experiencing a major transformation driven by societal and environmental trends leading to an acceleration of autonomous driving, electrification and new mobility solutions.</p>
+            <p><a class="btn btn-lg btn-primary" href="http://www.faurecia.com/index.php/en/innovation/smart-life-board" role="button">Learn More</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" >
+          <img src="static/cover_pics/innovation.jpg" alt="future cockpit" width="1200" height="500">
+        </svg>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Sustainable mobility</h1>
+            <p>Faurecia is now investing significantly in technologies for both battery electric vehicles and fuel cell solutions as well as continuing to focus on lightweighting and other fuel economy solutions.</p>
+            <p><a class="btn btn-lg btn-primary" href="http://www.faurecia.com/en/innovation/sustainable-mobility" role="button">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" >
+          <img src="static/cover_pics/ecosystem.jpg" alt="future cockpit" width="1200" height="500">
+        </svg>
+        <div class="container">
+          <div class="carousel-caption text-right">
+            <h1>Faurecia’s innovation ecosystem</h1>
+            <p>Faurecia’s Innovation Ecosystem is a open global network designed to accelerate innovation, new technology solutions and the group’s transformation.</p>
+            <p><a class="btn btn-lg btn-primary" href="http://www.faurecia.com/en/innovation/faurecia-innovation-ecosystem" role="button">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+    
+          <img class="rounded-circle" src="static/cover_pics/china.jpg" width="140" height="140">
+        
+        <h2>China, the power of long-term planning </h2>
+        <p>2018 marks the 40th anniversary of Chinese Open Door policy kicked off in 1978 by Deng Xiaoping. During the past four decades, China has succeeded transforming itself into the second global economic power.</p>
+        <p><a class="btn btn-secondary" href="http://www.faurecia.com/en/newsroom/china-power-long-term-planning" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="rounded-circle" src="static/cover_pics/sickness.jpg" width="140" height="140">
+        <h2>Motion Sickness: Making the most of the onboard experience</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-secondary" href="http://www.faurecia.com/en/newsroom/motion-sickness-making-most-onboard-experience" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="rounded-circle" src="static/cover_pics/Blockchain.jpg" width="140" height="140">
+        <h2>Blockchain and the automotive industry - what have we learned so far</h2>
+        <p>Trust, traceability, transparency are three critical factors in the automotive industry. Especially when delivering a finished vehicle to the showroom involves a multitude of interactions across a wide business network of suppliers and manufacturers. New technologies like blockchain may provide a new solution for a more efficient exchange</p>
+        <p><a class="btn btn-secondary" href="http://www.faurecia.com/en/newsroom/blockchain-and-automotive-industry-what-have-we-learned-so-far" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Our vision & strategy for tomorrow’s mobility
+         </h2>
+         <span class="text-muted">Four megatrends are accelerating change across the automotive industry: Connectivity, Autonomous driving, Ride-Sharing and Electrification.</span>
+        <p class="lead">The automotive industry is undergoing a technology revolution, and Faurecia is at the heart of this transformation providing solutions for inspiring mobility</p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image" src="static/cover_pics/vision.jpg" width="400" height="400">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Operational Excellence </h2>
+        <span class="text-muted">Faurecia 4.0</span>
+        <p class="lead">rom 2017, the digital transformation of operations has entered mass deployment mode with the introduction of cobots, AGVs, digital dashboards linked to real-time information helping to speed decision-making, improve quality and ensure smooth running of production lines. Implementing these digital management tools and combining them with "big data" gives our teams greater control of manufacturing processes and opens up new prospects for optimizing production lines and improving efficiency to better meet the needs of our customers</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image" src="static/cover_pics/industry.jpg" width="400" height="400">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Convictions & values</h2>
+        <span class="text-muted">As a global leader in automotive technology, Faurecia provides innovative solutions to automotive challenges within its three strategic businesses: Faurecia Seating, Faurecia Interiors and Faurecia Clean Mobility.</span>
+        <p class="lead">In today’s world, with the many environmental and societal challenges posed by urbanization, growing populations, technology disruption and global warming, Faurecia has a responsibility as a company to make a positive contribution to society and to all its stakeholders. This role is described by Faurecia’s Convictions. They are an integral part of the Group’s Being Faurecia culture and are supported by the six values that guide all Faurecians daily behavior.
+</p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image" src="static/cover_pics/setting.jpg" width="400" height="400">
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+{% endblock %}

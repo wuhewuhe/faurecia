@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block about %}
+<h1>User Management</h1>
+<body>
+  <div class="ajax-container">
+<table id="example" class="display" style="width:100%">
+        
+    </table>
+  </div>
+</body>
+<script type="text/javascript">
+
+$(function() {
+$.ajax({
+    url: 'https://jsonplaceholder.typicode.com/users', //Change this path to your JSON file.
+    type: "get",
+    success: function(data) {
+        
+       console.info(data) 
+        var jStr = '[';
+        
+        for (var i = 0; i < data.length; i++) {
+        console.info(data[i].id)
+        jStr += '["'+data[i].id+'","'+data[i].name+'","'
+            +data[i].username+'","'+data[i].phone+'"],';
+    }
+        jStr = jStr.substring(0,jStr.length-1) 
+        jStr += ']';
+        //console.info(jStr)
+        var myJSON = JSON.parse(jStr);    
+        console.info(myJSON)
+        //console.info(typeof(myJSON))
+        
+        $('#example').DataTable( {
+        data: myJSON,
+        columns: [
+            { title: "Name" },
+            { title: "Position" },
+            { title: "Office" },
+            { title: "Extn." },
+         
+        ]
+    } );
+
+    }
+});
+});
+
+    </script>
+{% endblock %}

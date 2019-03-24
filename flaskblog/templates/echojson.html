@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <META http-equiv=Content-Type content="text/html; charset=utf-8">
+
+<style type="text/css">
+	table {
+  border: 1px solid #666;   
+    width: 100%;
+}
+th {
+  background: #f8f8f8; 
+  font-weight: bold;    
+    padding: 2px;
+}
+</style>
+    <!--插件引用-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+ <!--进行数据处理、html构造-->
+    <script type="text/javascript">
+$(function() {
+$.ajax({
+    url: '/echojson', //Change this path to your JSON file.
+    type: "get",
+    dataType: "json",
+    //Remove the "data" attribute, relevant to this example, but isn't necessary in deployment.
+    data: data,
+    success: function(data, textStatus, jqXHR) {
+        drawTable(data);
+    }
+});
+});
+
+
+
+function drawTable(data) {
+    var rows = [];
+
+    for (var i = 0; i < data.length; i++) {
+        rows.push(drawRow(data[i]));
+    }
+
+    $("#personDataTable").append(rows);
+}
+
+function drawRow(rowData) {
+    var row = $("<tr />")
+    row.append($("<td>" + rowData.id + "</td>"));
+    row.append($("<td>" + rowData.firstName + "</td>"));
+    row.append($("<td>" + rowData.lastName + "</td>"));
+
+    return row;
+}
+
+        
+    </script>
+</head>
+<body>
+    <img src="static/data_pics/distrbuation.jpg" alt="future cockpit" width="800" height="500">
+<table id="personDataTable">
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    
+</table>
+  </body>
+
+
+</html>

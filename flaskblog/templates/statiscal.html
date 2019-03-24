@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block about %}
+
+
+<!--basic statistic results-->
+        <h1>Statistical Results</h1>
+        
+         <h2>description</h2>
+         <span>In this part, we can see some importantes value </span>
+         <a class="btn btn-success pull-right" href="/dash">back to dashboard</a>
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>.........</th>
+                  <th>Cycletime</th>
+                  <th>Melt Temperature</th>
+                  <th>Packing time</th>
+                  <th>Packing pressure</th>
+                  <th>Mold wall temperature</th>
+                  <th>Maximum Injection pressure</th>
+                  <th>Part weight</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>mean</td>
+                  <td>60</td>
+                  <td>299</td>
+                  <td>200</td>
+                  <td>149</td>
+                  <td>2</td>
+                  <td>299</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>std</td>
+                  <td>0.93</td>
+                  <td>8.59</td>
+                  <td>8.56</td>
+                  <td>8.48</td>
+                  <td>0.05</td>
+                  <td>8.28</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>min</td>
+                  <td>58</td>
+                  <td>280</td>
+                  <td>180</td>
+                  <td>130</td>
+                  <td>1.9</td>
+                  <td>280</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>max</td>
+                  <td>62</td>
+                  <td>320</td>
+                  <td>220</td>
+                  <td>170</td>
+                  <td>2.1</td>
+                  <td>320</td>
+                  <td>ante</td>
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        
+{% endblock %}

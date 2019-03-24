@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block about %}
+
+ <h1>Visualization choice</h1><br/>
+ <a class="btn btn-success pull-right" href="/dash">back to dashboard</a>
+<div class="col-md-12 order-md-1">    
+        <div class="row">
+<a class="btn btn-success" class="col-md-3 mb=3" href="{{ url_for('result_pie_cycle') }}">Pie chart</a>
+<span>---</span>
+<a class="btn btn-success" class="col-md-3 mb=3" href="{{ url_for('result_barplot') }}">Bar plot</a>
+<span>---</span>
+<a class="btn btn-success" class="col-md-3 mb=3" href="{{ url_for('result_radarplot') }}">radar plot</a>
+<span>---</span>
+<a class="btn btn-success" class="col-md-3 mb=3" href="{{ url_for('result_scatterplot') }}">scatter plot</a>
+</div>
+</div>
+
+<table id="example" class="display" style="width:100%">
+       <thead>
+            <tr>
+            	
+                <th>Cycle time</th>
+                <th>Maximum injection pressure</th>
+                <th>Melt temperature</th>
+                <th>Mold wall temperature</th>
+                <th>Packing Pressure</th>
+                <th>Pcking time</th>
+                <th>Par weight</th>
+                <th>Quality</th>
+                <th>Sequence</th>
+                
+            </tr>
+        </thead>
+        
+    </table>
+        
+    </table>
+
+<script type="text/javascript">
+		$(function() {
+$.ajax({
+    url: '/mockup', //Change this path to your JSON file.
+    type: "get",
+    success: function(data) {
+        
+       console.info(data) 
+       $('#example').DataTable( {
+        data: data,
+        columns: [
+           
+                {"data": "Cycle_time"},
+                {"data": "Maximum_injection_pressure"},
+                {"data": "Melt_temperature"},
+                {"data": "Mold_wall_temperature"},
+                {"data": "Packing_pressure"},
+                {"data": "Packing_time"},
+                {"data": "Part_weight"},
+                {"data": "Quality"},
+                {"data": "Sequence"}
+        ]
+    } );
+    }
+        
+   
+});
+});
+
+</script>
+{% endblock %}

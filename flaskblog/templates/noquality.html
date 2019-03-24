@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block about %}
+<h1>No quality data information</h1>
+<a class="btn btn-success pull-right" href="/dash">back to dashboard</a>
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+            	<th>Sequence</th>
+                <th>Cycle time</th>
+                <th>Maximum injection pressure</th>
+                <th>Melt temperature</th>
+                <th>Mold wall temperature</th>
+                <th>Packing Pressure</th>
+                <th>Pcking time</th>
+                <th>Par weight</th>
+                <th>Pcking time</th>
+                
+            </tr>
+        </thead>
+        
+    </table>
+<script>
+
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "ajax": {
+                // "url": "static/objects2.txt", // This works for the static file
+                "url": "/boke", // This now works too thanks to @kthorngren
+                "dataType": "json",
+                "dataSrc": "data",
+                "contentType":"application/json"
+            },
+            columns: [
+                {"data": "Sequence"},
+                {"data": "Cycle_time"},
+                {"data": "Maximum_injection_pressure"},
+                {"data": "Melt_temperature"},
+                {"data": "Mold_wall_temperature"},
+                {"data": "Packing_pressure"},
+                {"data": "Packing_time"},
+                {"data": "Packing_weight"},
+                {"data": "Quality"},
+            ]
+        });
+    });
+
+</script>
+{% endblock %}

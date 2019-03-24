@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block about %}
+
+<div id="main" style="width: 600px;height:400px;"></div>
+<a class="btn btn-success pull-right" href="/dash/choice">back to choice page</a>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+    title: {
+        text: 'Radar Plot'
+    },
+    tooltip: {},
+    legend: {
+        data: ['Min（min value）', 'Mean（Mean value）']
+    },
+    radar: {
+        // shape: 'circle',
+        name: {
+            textStyle: {
+                color: '#fff',
+                backgroundColor: '#999',
+                borderRadius: 3,
+                padding: [3, 5]
+           }
+        },
+        indicator: [
+           { name: 'Cycletime', max: 62},
+           { name: 'Melt temperature', max: 220},
+           { name: 'Maximum injection pressure', max: 320},
+           { name: 'Mold wall temperature', max: 170},
+           { name: 'Packing pressure）', max: 120},
+           { name: 'Packing weight', max: 320}
+        ]
+    },
+    series: [{
+        name: 'range min to mean to max',
+        type: 'radar',
+        // areaStyle: {normal: {}},
+        data : [
+            {
+                value : [58, 180, 280, 130, 80, 280],
+                name : 'min'
+            },
+             {
+                value : [61, 227, 306, 156, 106, 310],
+                name : 'min'
+            }
+        ]
+    }]
+};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+/*
+Exception: SyntaxError: missing ] after element list
+@Scratchpad/5:29
+*/
+    </script>
+{% endblock %}

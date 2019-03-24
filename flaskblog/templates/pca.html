@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block about %}
+
+<h1>Principal compoentes analyst</h1>
+<div>
+<a class="btn btn-success pull-right" href="/dash">back to dashboard</a>
+<a class="btn btn-success pull-left" href="/pca_result">Look for PCA result</a>
+</div>
+
+<div>
+<h2>Standard Scaler Data</h2>
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                
+                <th>Cycle time</th>
+                <th>Maximum injection pressure</th>
+                <th>Melt temperature</th>
+                <th>Mold wall temperature</th>
+                <th>Packing Pressure</th>
+                <th>Packing time</th>
+                
+                <th>Quality</th>
+                
+            </tr>
+        </thead>
+        
+    </table>
+    </div>
+
+<script>
+
+   $(function() {
+$.ajax({
+    url: '/pca_data', //Change this path to your JSON file.
+    type: "get",
+    success: function(data) {
+        
+       //console.info(data)
+        $('#example').DataTable( {
+        data: data,
+        columns: [
+
+                {"data": "Cycle_time"},
+                {"data": "Maximum_injection_pressure"},
+                {"data": "Melt_temperature"},
+                {"data": "Mold_wall_temperature"},
+                {"data": "Packing_pressure"},
+                {"data": "Packing_time"},
+
+                {"data": "Quality"}
+         
+        ]
+    } );
+
+    }
+});
+});
+
+</script>
+{% endblock %}

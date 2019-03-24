@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+{% block about %}
+
+
+<script type=text/javascript>
+$(function() {
+    function submit_form(e) {
+        $.getJSON('/add', {
+            a: $('input[name="Part_weight"]').val(),
+            b: $('input[name="Melt_temperature"]').val(),
+            c: $('input[name="Mold_wall_temperature"]').val(),
+            d: $('input[name="Maximum_injection_pressure"]').val(),
+            e: $('input[name="Packing_pressure"]').val(),
+            f: $('input[name="Cycle_time"]').val(),
+            g: $('input[name="Packing_time"]').val(),
+            now: new Date().getTime()
+        },
+        function(data) {
+            $('#result').text(data.result);
+        });
+    };
+    // 绑定click事件
+    $('#calculate').bind('click', submit_form);
+
+    $("#reset").click(function(){
+    $("#myform")[0].reset();
+  });
+
+    $('#refresh').click(function() {
+    location.reload();
+});
+});
+
+
+</script>
+</head>
+<body>
+  <div class="callout callout-info">
+        <h4>Please input the new pattern data</h4>
+
+        <p>We will present the past data statistic</p>
+      </div>
+
+  <button class="btn btn-success pull-left" id="reset" >Reset form</button> 
+  <button class="btn btn-success pull-right" id="refresh" >Refresh Web</button> 
+  </br></br></br>
+
+  <form  id="myform">
+                <legend class="border-bottom mb-4">Data input</legend>   
+    <div class="col-md-9 order-md-1">
+      
+        <div class="row">
+          <div class="col-md-3 mb=3">
+            <label for="Part_weight">Part_weight</label>
+            <input type="text" class="form-control" name=Part_weight placeholder="280-320" value="" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="Melt_temperature">Melt_temperature</label>
+            <input type="text" class="form-control" name=Melt_temperature placeholder="180-220" value="" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="Mold_wall_temperature">Mold_wall_temperature</label>
+            <input type="text" class="form-control" name=Mold_wall_temperature placeholder="130-170" value="" required>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 order-md-1">    
+        <div class="row">
+          <div class="col-md-3 mb=3">
+            <label for="Maximum_injection_pressure">Maximum_injection_pressure</label>
+            <input type="text" class="form-control" name=Maximum_injection_pressure placeholder="280-320" value="" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="Packing_pressure">Packing_pressure</label>
+            <input type="text" class="form-control" name=Packing_pressure placeholder="80-120" value="" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="Cycle_time">Cycle_time</label>
+            <input type="text" class="form-control" name=Cycle_time placeholder="58-63" value="" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="Packing_time">Packing_time</label>
+            <input type="text" class="form-control" name=Packing_time placeholder="2" value="" required>
+          </div>
+        </div>
+    </div>
+    <label for="Packing_time">Predict Quality</label>
+          <div class="col-md-3 mb-3">
+            
+            <button class="btn btn-info" id="calculate">result</button>
+            <span id=result class="btn btn-success">?</span>
+          </div>
+            </form>
+<!--
+<p>
+    <input type=text size=5 name=> 
+    <input type=text size=5 name=> 
+    <span id=result>?</span>
+</p>
+<p><input type="button" id="calculate" value="计算"></p>
+-->
+</body>
+
+{% endblock %}

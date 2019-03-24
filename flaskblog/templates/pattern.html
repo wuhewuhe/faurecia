@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block about %}
+
+<head>
+    <meta charset="utf-8">
+    <title>Proudly presented by ECharts</title>
+  {% for jsfile_name in script_list %}
+    <script src="{{host}}/{{jsfile_name}}.js"></script>
+    {% endfor %}
+</head>
+
+<body>
+  <div id="ronde" style="width: 600px;height:400px;"></div>
+   <a class="btn btn-success pull-right" href="/dash">back to dashboard</a>
+  {{myechart|safe}}
+  <div id="ronde" style="width: 600px;height:400px;"></div>
+</body>
+<script type="text/javascript">
+   var myChart = echarts.init(document.getElementById('ronde'));
+   
+
+   var  option = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        title: {
+        text: 'Par weight Piechart (KG)',
+        left: 'center',
+        top: 20,
+        textStyle: {
+            color: '#ccc'
+        }
+    },
+        legend: {
+            orient: 'vertical',
+            x: 'left',
+            data:['0-280','280-290','290-300','300-310','310-320']
+        },
+        series: [
+            {
+                name:'Pattern weight',
+                type:'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:0, name:'280'},
+                    {value:13, name:'290'},
+                    {value:30, name:'300'},
+                    {value:27, name:'310'},
+                    {value:9, name:'320'}
+                ]
+            }
+        ]
+    };
+    myChart.setOption(option);
+
+</script>
+{% endblock %}

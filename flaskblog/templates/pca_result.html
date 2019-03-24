@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block about %}
+<div>
+<h1>PCA dimension 2D</h1>
+<span>Use a PCA projection to 2d to visualize the entire data set.</span>
+</div>
+<section class="content">
+      <div class="callout callout-info">
+        <h4>Explained Variance</h4>
+
+        <p>0.17275694.     0.17013907</p>
+        <p>The two classes separated not well</p>
+      </div>
+      <!-- Default box -->
+      
+    </section>
+<img src="static/data_pics/pca.png" width="500px" height="500px">
+
+<a class="btn btn-success pull-right" href="/dash">back to dashboard</a>
+
+{% endblock %}
